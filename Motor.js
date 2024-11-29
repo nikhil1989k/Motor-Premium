@@ -509,10 +509,11 @@ rdate.addEventListener("change",function(){
   csinopp.selectedIndex='0';
   document.getElementById('rupees').textContent
   if(!isNaN(checkDate.getTime())){
-  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
   resetAddon();
   checkAddonApplicable();
-  resetPremiumAmount();		  
+  resetPremiumAmount();
+  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
+  		  
   console.log("Inside rdate event");
   }
   else{
@@ -561,11 +562,12 @@ vtype.addEventListener("input",function(){
   nopp.value=null;
   csinopp.selectedIndex='0';
   document.getElementById('rupees').textContent
-  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
+  
   console.log("back to vtype event");
   resetAddon();
   checkAddonApplicable();
   resetPremiumAmount();	
+  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);	
 });
 nps.addEventListener("input",function(){
   cc.value=null;
@@ -586,11 +588,12 @@ nps.addEventListener("input",function(){
   csinopp.selectedIndex='0';
   console.log(rsdate.value);
   console.log(typeof rsdate.value);
-  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
+  
   console.log("Inside nps event");
   resetAddon();
   checkAddonApplicable();
-  resetPremiumAmount();		
+  resetPremiumAmount();	
+  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);	
 });
 ND.addEventListener("change",function(){
   const jrsdate=new Date(rsdate.valueAsDate);
@@ -650,10 +653,11 @@ rsdate.addEventListener("change",function(){
   nopp.value=null;
   csinopp.selectedIndex='0';
   document.getElementById('rupees').textContent
-  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
+  
   console.log("Inside rsdate event");
   resetAddon();
   checkAddonApplicable();
+  basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);	
 });
 oldidv.addEventListener("input",()=>{
   document.getElementById('rupees').textContent
