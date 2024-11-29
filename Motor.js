@@ -1959,6 +1959,7 @@ tod.textContent='';
 god.textContent='';
 ttp.textContent='';
 gttp.textContent='';
+document.getElementById('rupees').textContent='';	
 }
 function saveAsImage() {
   const findEl = document.getElementById('container')
