@@ -1396,16 +1396,16 @@ function totalAmount(){
     }if(tyreV.selectedIndex!='0'){
       document.getElementById('OD11').style.display='flex';
       switch(tyreV.selectedIndex){
-        case '1':
+        case 1:
           OD11P.textContent=1000;
           break;
-        case '2':
+        case 2:
           OD11P.textContent=2000;
           break;
-        case '3':
+        case 3:
           OD11P.textContent=4000;
           break;
-        case '4':
+        case 4:
           OD11P.textContent=8000;
       }
     }if(NP.checked){
