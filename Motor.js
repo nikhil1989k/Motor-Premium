@@ -512,6 +512,7 @@ rdate.addEventListener("change",function(){
   basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
   resetAddon();
   checkAddonApplicable();
+  resetPremiumAmount();		  
   console.log("Inside rdate event");
   }
   else{
@@ -525,18 +526,21 @@ zone.addEventListener("change",function(){
   console.log(typeof rsdate.value);
   basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
   console.log("Inside zone event");
+	resetPremiumAmount();
 });
 gvw.addEventListener("input",function(){
   console.log(rsdate.value);
   console.log(typeof rsdate.value);
   basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
   console.log("Inside gvw event");
+	resetPremiumAmount();
 });
 cc.addEventListener("input",function(){
   console.log(rsdate.value);
   console.log(typeof rsdate.value);
   basicODRate(rdate.value,rsdate.value,zone.value,vtype.value,gvw.value,cc.value,nps.value);
   console.log("Inside cc event");
+	resetPremiumAmount();
 });
 vtype.addEventListener("input",function(){
   console.log(rsdate.value);
@@ -561,6 +565,7 @@ vtype.addEventListener("input",function(){
   console.log("back to vtype event");
   resetAddon();
   checkAddonApplicable();
+  resetPremiumAmount();	
 });
 nps.addEventListener("input",function(){
   cc.value=null;
@@ -585,6 +590,7 @@ nps.addEventListener("input",function(){
   console.log("Inside nps event");
   resetAddon();
   checkAddonApplicable();
+  resetPremiumAmount();		
 });
 ND.addEventListener("change",function(){
   const jrsdate=new Date(rsdate.valueAsDate);
