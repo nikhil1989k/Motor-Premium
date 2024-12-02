@@ -627,7 +627,10 @@ ND.addEventListener("change",function(){
     }
   }
   else{
-    imt23.disabled=false;
+    if(vtype.value=='GCV4' || vtype.value=='PCV Bus'||vtype.value=='PCV School Bus'||vtype.value=='MISC'){
+	  imt23.disabled=false;  
+    }
+	 
   }
 });
 
