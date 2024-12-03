@@ -1975,3 +1975,13 @@ function saveAsImage() {
       link.remove()
   })
 }
+function htmlAsImage(){
+htmlToImage.toJpeg(document.getElementById('container'), { quality: 0.95,style:{background:"white"} })
+  .then(function (dataUrl) {
+    var link = document.createElement('a');
+    link.download = document.getElementById('Pname').value+'_'+document.getElementById('regno').value+'_'+'Quote.jpg';
+    link.href = dataUrl;
+    link.click();
+    
+  });
+}
