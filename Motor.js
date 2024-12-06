@@ -1655,7 +1655,7 @@ function checkAddonApplicable(){
           LK.disabled=false;
         }else if(nps.value>17 && age<3){
           ND.disabled=false;
-          CM.disabled=true;
+          CM.disabled=false;
           RTI.disabled=false;
           //EP.disabled=false;
         }else if(nps.value>17 && age <=4.5 && age>=3){
