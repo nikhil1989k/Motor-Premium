@@ -617,9 +617,10 @@ ND.addEventListener("change",function(){
       window.alert("NIL Dep is only applicable for commercial vehicle age greater than 2.6, if ncb is min 20% for renewal & 25% for rollover");
       if(ncbd.selectedIndex=='0'){
         ND.checked=false;
+        imt23.disabled=false;
       }
     }
-    if(age>4.6 && (vtype.value=='PvtCar'||vtype.value=='2w'||vtype.value=='2WSS'||vtype.value=='PvtCarS')){
+    if(age>4.6 && (vtype.value=='PvtCar'||vtype.value=='2W'||vtype.value=='2WSS'||vtype.value=='PvtCarS')){
       window.alert("NIL Dep is only applicable for age greater than 4.6, if ncb is min 20% for renewal & 25% for rollover");
       if(ncbd.selectedIndex=='0'){
         ND.checked=false;
@@ -631,6 +632,34 @@ ND.addEventListener("change",function(){
 	  imt23.disabled=false;  
     }
 	 
+  }
+});
+ncbd.addEventListener("input",function(){
+  const jrsdate=new Date(rsdate.valueAsDate);
+  const jrdate=new Date(rdate.valueAsDate);
+  console.log(jrdate);
+  console.log(jrsdate);
+  const days=(jrsdate.getTime()-jrdate.getTime())/1000/60/60/24;
+  var age;
+  if(days<1460){
+    age=days/365;
+  }
+  else{
+    age=(days+1)/365.25;
+  }
+  if(ND.checked){
+    if(age>2.6 && (vtype.value=='GCV4' || vtype.value=='PCV Bus'||vtype.value=='PCV School Bus'||vtype.value=='MISC' || vtype.vlaue=='PCV Taxi')){
+      window.alert("NIL Dep is only applicable for commercial vehicle age greater than 2.6, if ncb is min 20% for renewal & 25% for rollover");
+      if(ncbd.selectedIndex=='0'){
+        ND.checked=false;
+      }
+    }
+    if(age>4.6 && (vtype.value=='PvtCar'||vtype.value=='2W'||vtype.value=='2WSS'||vtype.value=='PvtCarS')){
+      window.alert("NIL Dep is only applicable for age greater than 4.6, if ncb is min 20% for renewal & 25% for rollover");
+      if(ncbd.selectedIndex=='0'){
+        ND.checked=false;
+      }
+    }
   }
 });
 
