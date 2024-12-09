@@ -728,8 +728,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         csinopd.selectedIndex='0';
         nopd.disabled=false;
         csinopd.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         
         gvw.style.backgroundColor='rgb(240, 160, 160)';
         //gvw.focus();
@@ -768,8 +768,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         nps.style.backgroundColor='white';
         imt23.disabled=false;
         imt23.checked=false;
-	OT.disabled=false;
-	OT.checked=false;
+	      OT.disabled=false;
+	      OT.checked=false;
         miscODRate();
       }else if(vehicleType=="PvtCar") {
         nopp.value==null;
@@ -794,8 +794,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         gvw.disabled=true;
         nps.disabled=true;
         cc.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         //cc.focus();
         cc.style.backgroundColor='rgb(240, 160, 160)';
           if(cubicCap){
@@ -826,8 +826,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         nps.disabled=true;
         nps.style.backgroundColor='white';
         cc.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         //cc.value=null;
         //cc.focus();
         cc.style.backgroundColor='rgb(240, 160, 160)';
@@ -858,8 +858,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         gvw.disabled=true;
         cc.disabled=false;
         nps.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         //cc.value=null;
        // nps.value=null;
         nps.style.backgroundColor='rgb(240, 160, 160)';
@@ -897,8 +897,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         cc.disabled=true;
         gvw.disabled=true;
         nps.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         cc.style.backgroundColor='white';
         gvw.style.backgroundColor='white';
         nps.style.backgroundColor='rgb(240, 160, 160)';
@@ -932,8 +932,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         nps.disabled=true;
         nps.style.backgroundColor='white';
         cc.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         //cc.value=null;
         //cc.focus();
         cc.style.backgroundColor='rgb(240, 160, 160)';
@@ -965,8 +965,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         gvw.disabled=true;
         nps.disabled=true;
         cc.disabled=false;
-	OT.disabled=true;
-	OT.checked=false;      
+	      OT.disabled=true;
+	      OT.checked=false;      
         //cc.focus();
         cc.style.backgroundColor='rgb(240, 160, 160)';
           if(cubicCap){
