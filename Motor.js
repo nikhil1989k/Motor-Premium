@@ -619,7 +619,7 @@ ND.addEventListener("change",function(){
         ND.checked=false;
       }
     }
-    if(age>4.6 && (vtype.value=='PvtCar'||vtype.value=='2w'||vtype.value=='2WSS'||vtype.value=='PvtCarS')){
+    if(age>4.6 && (vtype.value=='PvtCar'||vtype.value=='2W'||vtype.value=='2WSS'||vtype.value=='PvtCarS')){
       window.alert("NIL Dep is only applicable for age greater than 4.6, if ncb is min 20% for renewal & 25% for rollover");
       if(ncbd.selectedIndex=='0'){
         ND.checked=false;
