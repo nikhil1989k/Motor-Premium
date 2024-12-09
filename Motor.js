@@ -652,6 +652,7 @@ ncbd.addEventListener("input",function(){
       window.alert("NIL Dep is only applicable for commercial vehicle age greater than 2.6, if ncb is min 20% for renewal & 25% for rollover");
       if(ncbd.selectedIndex=='0'){
         ND.checked=false;
+        imt23.disabled=false;
       }
     }
     if(age>4.6 && (vtype.value=='PvtCar'||vtype.value=='2W'||vtype.value=='2WSS'||vtype.value=='PvtCarS')){
