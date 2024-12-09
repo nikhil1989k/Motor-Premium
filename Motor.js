@@ -1696,6 +1696,7 @@ function resetAddon(){
   LK.checked=false;
   EMP.checked=false;
   RSA.checked=false;
+  GE.checked=false;
   //tyreV.checked=false;
   //towingAmt.checked=false;
   NP.checked=false;
