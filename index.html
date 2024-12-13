@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1N9R0LQX2E"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'G-1N9R0LQX2E');
+	</script>	  
+    <title>UIIC Motor Premium Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+      html{
+        display: flex;
+        justify-content: center;
+      }
+      #container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+      }
+      .logo{
+        width: 686;
+        object-fit: contain;
+      }
+      img{
+        width: 686px;
+        margin-bottom: -4px;
+        object-fit: contain;
+      }
+      select{
+        padding: 1.5px;
+        margin-top:1px;
+      }
+      label{
+        font-family: "Roboto" Arial;
+        font-weight: 500;
+        font-style: italic;
+        user-select: none;
+	      word-wrap:break-word;
+      }
+      
+      #newidv{
+        font-weight: 900;
+      }
+      
+      .Proposer{
+        width: 682px;
+        border-style:solid;
+        display: flex;
+        justify-content: space-between;
+        border-color: rgb(137, 135, 135);
+        align-content: center;
+	      overflow-x: hidden;
+        overflow-x: clip !important;      
+        
+      }
+      #Pname{
+        width: 320px;
+      }
+      #regno{
+        width:100px;
+
+      }
+      .RDZRI{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        justify-content: space-between;
+        border-color:rgb(137, 135, 135);
+        align-content: center;
+      }
+      .RDZRI div{
+        flex: 1fx;
+      }
+      input{
+        
+        margin-top: 1px;
+        margin-bottom: 1px;
+        
+        
+      }
+     
+        
+      .moredetails{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        justify-content: space-between;
+        border-color: rgb(137, 135, 135);
+        align-content: center;
+      }
+      .moredetails div{
+        flex:1fx;
+      }
+      .moredetails div input{
+        width: 100px;
+      }
+      .Seating{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        justify-content: space-between;
+        border-color:rgb(137, 135, 135);
+        align-content: center;
+      }
+      .Seating div{
+        flex:1fx;
+      }
+      .Seating div input{
+        width: 40px;
+      }
+      .idv{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        justify-content: space-between;
+        border-color:rgb(137, 135, 135);
+        align-content: center;
+      }
+      #dep{
+        width: 40px;
+      }
+      .discount{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        justify-content: space-between;
+        border-color:rgb(137, 135, 135);
+        align-content: center;
+      }
+      #odd{
+        width:50px;
+        margin-left:5px;
+      }
+      #ncbd{
+        width:52px;
+        margin-left:5px;
+      }
+      #imt28{
+        transform: scale(1.3);
+        margin-top: 5px;
+        margin-right: 4px;
+
+      }
+      .imt28o{
+        margin-right: 5px;
+      }
+      .imt23o{
+        margin-right: 5px;
+	      display:flex;
+	      align-content:center;
+      }
+      
+      #paodt{
+        margin-right: 5px;
+        height: 18px;
+      }
+      .paod{
+	      display:flex;
+        align-content:center;
+      }
+      .heading{
+        width: 682px;
+        display: flex;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        border-color:rgb(137, 135, 135);
+        justify-content: center;
+        background-color: rgb(243, 224, 224);
+           
+      }
+      .addOnContainer{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-color:rgb(137, 135, 135);
+        align-content: center;
+        padding-top: 4px;
+        
+      }
+      .options{
+        width: 682px;
+        
+        display: flex;
+        justify-content:space-between;
+        padding-top: 5px;
+        align-content: center;
+
+      }
+      input[type='checkbox']{
+        margin-left: 4px;
+        transform: scale(1.3);
+        margin-top: 2px;
+	      vertical-align:middle;
+       }
+       .optionsrow{
+        width: 140px;
+        justify-content: right;
+        padding: 0%;
+        display: flex;
+        align-content:flex-start;
+        
+                    
+       }
+       .optionsrow2{
+        width: 320px;
+        text-align: right;
+       }
+       .optionsrow3{
+        width:auto;
+        text-align: right;
+       }
+       .optionsrow4{
+        width:auto;
+       }
+       .optionsrow5{
+
+        width: 415px;
+        text-align: right;
+       }
+
+       #towingAmt{
+        width: 60px;
+        margin-left: 5px;
+       }
+       #nopd{
+        width: 30px;
+        margin-left: 5px;
+       }
+       #tyreV{
+        margin-left: 5px;
+       }
+       .csi{
+        margin-left:5px;
+        margin-right: 2px;
+       }
+       #nopp{
+        width: 30px;
+        margin-left: 5px;
+       }
+       .premiumDetails{
+        min-height: 150px;
+        
+        display: flex; 
+
+       }
+       .OD{
+        width: 340px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        border-color:rgb(137, 135, 135);
+       }
+       .Liability{
+        width: 340px;
+        border-top: none;
+        border-left: none;
+        border-right: solid;
+        border-bottom: solid;
+        border-color:rgb(137, 135, 135);
+       }
+       .OD h3{
+        text-align: center;
+        margin: 0%;
+        
+       }
+       .OD h3::after{
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width:70%;
+        
+        border-bottom: 1px solid black;
+       }
+       .Liability h3{
+        text-align: center;
+        margin: 0%;
+        
+       }
+       .Liability h3::after{
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width:70%;
+        
+        border-bottom: 1px solid black;
+       }
+       #OD1,#OD2,#OD3,#OD4,#OD5,#OD6,#OD7,#OD8,#OD9,#OD10,#OD11,#OD12,#OD13,#OD14,#OD15,#OD16,#OD17,#OD18{
+        display: flex;
+        width: 340px;
+        
+       }
+       #OD1L,#OD2L,#OD3L,#OD4L,#OD5L,#OD6L,#OD7L,#OD8L,#OD9L,#OD10L,#OD11L,#OD12L,#OD13L,#OD14L,#OD15L,#OD16L,#OD17L,#OD18L{
+        width: 260px;
+        margin-right: 0px;
+        margin-top: 2px;
+        font-family: "Roboto" Arial;
+        font-weight: 500;
+        font-style: italic;
+        user-select: none;
+        margin-left:3px;
+        text-wrap: wrap;
+        text-align: left;
+       } 
+
+       
+       #OD1P,#OD2P,#OD3P,#OD4P,#OD5P,#OD6P,#OD7P,#OD8P,#OD9P,#OD10P,#OD11P,#OD12P,#OD13P,#OD14P,#OD15P,#OD16P,#OD17P,#OD18P{
+        width:70px;
+        margin-left: 0px;
+        margin-top:2px;
+        font-family: "Roboto" Arial;
+        font-weight: 500;
+        font-style: italic;
+        user-select: none;
+        text-align: right;
+       }
+       #Liability1,#Liability2,#Liability3,#Liability4,#Liability5,#Liability6,#Liability7,#Liability8{
+        display: flex;
+        width: 340px;
+        
+       }
+       #Liability1L,#Liability2L,#Liability3L,#Liability4L,#Liability5L,#Liability6L,#Liability7L,#Liability8L{
+        width: 280px;
+        margin-right: 0px;
+        margin-top: 2px;
+        text-wrap:wrap;
+        font-family: "Roboto" Arial;
+        font-weight: 500;
+        font-style: italic;
+        user-select: none;
+        margin-left:3px;
+        
+       } 
+
+       
+       #Liability1P,#Liability2P,#Liability3P,#Liability4P,#Liability5P,#Liability6P,#Liability7P,#Liability8P{
+        width:50px;
+        margin-left: 0px;
+        margin-top:2px;
+        font-family: "Roboto" Arial;
+        font-weight: 500;
+        font-style: italic;
+        user-select: none;
+        text-align: right;
+        
+       }
+       .amountDetails{
+        display: flex;
+       }
+       .amountDetailsrow1{
+        width: 340px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        border-color:rgb(137, 135, 135);
+
+       }
+       .amountDetailsrow2{
+        width: 340px;
+        border-top: none;
+        border-left: none;
+        border-right: solid;
+        border-bottom: solid;
+        border-color:rgb(137, 135, 135);
+
+       }
+       #aOD{
+        display:flex;
+        
+
+       }
+       #gOD{
+        display:flex;
+        
+       }
+       #aTP{
+        display:flex;
+       }
+       #gTP{
+        display:flex;
+       }
+      .payable{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        display: flex;
+        justify-content: space-between;
+        border-color:rgb(137, 135, 135);
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+        font-family: "DM Serif Text", serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: larger;
+      }
+      #viewPremiumBtn{
+        width: 340px;
+        border-radius: 10px;
+        height:25px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        
+
+      }
+      #viewPremiumBtn:hover{
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+      }
+      #saveAsImageBtn{
+        width: 340px;;
+        border-radius: 10px;
+        height: 25px;
+        background-color:black;
+        color: white;
+        cursor: pointer;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+      }
+      #saveAsImageBtn:hover{
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+
+      }
+      .btnContainer{
+        text-align: center;
+
+      }
+      #message{
+        width: 682px;
+        border-top: none;
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        
+        border-color:rgb(137, 135, 135);
+        
+        
+      }
+      #messagetext{
+        border: none;
+        height:60px;
+        text-wrap: wrap;
+        width: 670px;
+        overflow: clip;
+        display: block;
+        padding-right: 10px;
+        font-size: 15px;
+        font-style: italic;
+        font-weight: 600;
+        
+        
+      }
+      /*#switch{
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 20px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: small;
+        font-style: normal;
+        
+        
+      }
+      #switch input{
+        opacity: 0;
+        width:0;
+        height:0;
+
+      }
+      #slider{
+        position:absolute;
+        background-color: gray;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      #slider::before{
+        position: absolute;
+        content: 'IC';
+        height: 14px;
+        width: 26px;
+        left: 2px;
+        bottom: 2px;
+        
+        background-color: rgb(244, 239, 239);
+        text-align: center;
+        border: 0.5px solid;
+        
+        
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      #switch input:checked + #slider{
+        background-color: green;
+      }
+      #switch input:checked + #slider::before{
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        content: 'EV';
+      }*/
+      #engineType{
+        position: relative;
+        border-radius: 0px;
+      }
+      #engineType::before{
+        content: 'Select Engine Type';
+        background-color: black;
+        opacity: 0.7;
+        border-radius:10px;
+        color: white;
+        position: absolute;
+        display: block;
+        transform: scale(0);
+        bottom: 25px;
+        padding: 5px;
+        left:-20px;
+        transition: transform ease-out 300ms;
+        white-space:nowrap;
+      }
+      #engineType:hover::before{
+        transform: scale(1);
+      }
+      
+    </style>
+    
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="logo">
+        <img src="logo.png">
+      </div>
+      <div class="Proposer">
+        <div>
+          <label style="word-wrap:break-word">Proposer Name</label>
+          <input id="Pname" type="text" style="font-weight: bold;">  
+        </div>
+        <div>
+          <label style="word-wrap:break-word">Registration No.</label>
+          <input id="regno" type="text" style="font-weight: bold;">
+        </div>
+      </div>
+      <div class="RDZRI">
+        <div>
+          <label style="margin-right: 5px;">Registration Date</label>
+          <input type="date" id="rdate" min="1900-01-01">
+        </div>
+        <div>
+          <label style="margin-right: 5px;">Risk Start Date</label>
+          <input type="date" id="rsdate">
+        </div>
+        <div>
+          <label style="margin-right: 5px;">
+            Zone
+          </label>
+          <select id="zone">
+            <option value="zoneb">Zone B</option>
+            <option value="zonea">Zone A</option>
+            <option value="zonec">Zone C</option>
+          </select>
+        </div>
+           
+      </div>
+      <div class="moredetails">
+        <div>
+          <label>Vehicle Type</label>
+          <select id="vtype">
+            <option value="GCV4">GCV Other Than 3-Wheeler</option>
+            <option value="MISC">Miscellaneous & Spec.</option>
+            <option value="PvtCar">Private Car</option>
+            <option value="PvtCarS">Private Car Standalone</option>
+            <option value="2W">Two Wheeler</option>
+            <option value="2WSS">Two Wheeler Standalone</option>
+            <option value="PCV Taxi">PCV Not Exceeding 6 Pass.</option>
+            <option value="PCV Bus">PCV Bus</option>
+            <option value="PCV School Bus">PCV School Bus</option>
+          </select>
+        </div>
+       <!-- <div>
+          <label id="switch" for="toEV">
+            <input type="checkbox" id="toEV">
+            <span id="slider"></span>
+          </label>
+        </div>-->
+        <div id="engineType">
+          <select  id="eTypeSelect" disabled>
+            <option value="ICE">I.C.E.</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+        </div>
+        <div>
+          <label style="margin-left:5px">GVW</label>
+          <input type="number" id="gvw" style="width: 70px;" min="0" oninput="validity.valid||(value='');">
+          
+        </div>
+        <div>
+          <label style="margin-left:5px">CC/KW</label>
+          <input type="number" style="width: 70px;" id="cc" disabled min="0" oninput="validity.valid||(value='');">
+        </div>
+      </div>
+      <div class="Seating">
+        <div>
+          <label>NO. Of Passengers</label>
+          <input type="number" style="width: 40px;" id="nps" disabled min="0" oninput="validity.valid||(value='');">
+        </div>
+        <div>
+          <label>LL To Paid Driver Cleaner Conductor</label>
+          <input type="number" style="width: 40px;" id="lld" min="0" oninput="validity.valid||(value='');">
+        </div>
+        <div>
+          <label>Basic OD Rate - </label><label id="rate"></label>
+        </div>
+      </div>
+      <div class="idv">
+        <div><label>Ex Showroom&#47;Old IDV </label><input type="number" style="width: 155px;"id="oldidv" min="0" oninput="validity.valid||(value='');"></div>
+        <div><label>Depreciation </label><input type="number" id="dep" min="0" oninput="validity.valid||(value='');"><lable>%<label></label></div>
+        <div><label>New IDV :</label><label id="newidv"></label></div>
+      </div>
+      <div class="discount">
+        <div class="od"><label>Discount</label><input id="odd" type="number" min="0" oninput="validity.valid||(value='');"><span>%</span></div>
+        <div class="ncb"><label>NCB</label><select id="ncbd"><option value=0>0%</option><option value=20>20%</option><option value=25>25%</option><option value=35>35%</option><option value=45>45%</option><option value=50>50%</option></select></div>
+        <!--<div class="imt28o"><input type="checkbox" id="imt28"><label for="imt28">IMT 28 </label></div>-->
+        <div class="imt23o"><input type="checkbox" id="imt23"><label for="imt23" style="padding-top:3px;">&nbsp;IMT-23</label></div>
+        <div class="paod"><input type="checkbox" id="paodch"><label for="paodch" style="padding-top:3px;">&nbsp;PA Owner-Driver</label><select id="paodt" disabled><option value="1">1</option><option value="3">3</option><option value="5">5</option></select></div>
+      </div>
+      <div class="heading">AddOn & More Covers</div>
+      <div class="addOnContainer">
+        <div class="options">
+          <div class="optionsrow" style="width: 160px;"><label for="ND" >Nil Depreciation</label><input  type="checkbox" id="ND" disabled></div>
+          <div class="optionsrow" style="width: 135px;"><label for="EP">Engine Protect</label><input  type="checkbox" id="EP" disabled></div>
+          <div class="optionsrow" style="width: 130px;"><label for="CM">Consumables</label><input type="checkbox"  id="CM" disabled></div>
+          <div class="optionsrow" style="width: 160px;"><label for="RTI">Return To Invoice</label><input type="checkbox"  id="RTI" disabled></div>
+          
+        </div>
+        <div class="options">
+          <div class="optionsrow" style="width: 160px;"><label for="LK">Loss Of Key</label><input type="checkbox"  id="LK" disabled></div>
+          <div class="optionsrow" style="width: 135px;"><label for="EMP">Emi Protect</label><input type="checkbox"  id="EMP" disabled></div>
+          <div class="optionsrow" style="width: 130px;"><label for="NP">NCB Protect</label><input type="checkbox"  id="NP" disabled></div>
+          <div class="optionsrow" style="width: 160px;"><label for="RSA">Road Side Assist</label><input type="checkbox"  id="RSA" disabled></div>
+        </div>
+        <div class="options">
+          <div class="optionsrow" style="width: 160px;"><label for="LPG" style="padding-top: 2px;">LPG/CNG</label><input type="checkbox"  id="LPG"></div>
+          <div class="optionsrow" style="width: 135px;"><label for="GE">Geo Extension</label><input type="checkbox"  id="GE"></div>
+          <div class="optionsrow2"><label for="tyreV">Tyre & Rim Protect</label><select id="tyreV" disabled><option value="0">0</option><option value="25000">25000</option><option value="50000">50000</option><option value="100000">100000</option><option value="200000">200000</option></select></div>
+        </div>
+        <div class="options">
+          <div class="optionsrow3"><label>PA Cover To Paid Driver Clearner Conductor</label><input type="number" id="nopd" min="0" oninput="validity.valid||(value='');"><select class="csi" id="csinopd"><option vlaue="0">0</option><option vlaue="100000">100000</option><option vlaue="200000">200000</option></select></div>
+          <div class="optionsrow4"><label>Add. Towing</label><input type="number" id="towingAmt" max="20000" min="0" oninput="validity.valid||(value='');"></div>
+        </div>
+        <div class="options">
+          <div class="optionsrow5"><label>PA Cover To Unnamed Passengers</label><input type="number" id="nopp" min="0" oninput="validity.valid||(value='');" disabled><select class="csi" id="csinopp" disabled><option vlaue="0">0</option><option vlaue="100000">100000</option><option vlaue="200000">200000</option></select></div>
+          <div class="optionsrow"><label for="OT">Overturning</label><input type="checkbox"  id="OT" disabled></div>
+        </div>
+        <div class="options">
+          <div class="optionsrow" style="width: 160px;"><img src='battery.png'/ style="width: 30px;height: 18px;"><label for="EVP">EV Protect</label><input  type="checkbox" id="EVP" disabled></div>
+        </div>
+      </div>
+      <div class="premiumDetails">
+        <div class="OD">
+          <h3>Own Damage</h3>
+          <div id="OD1"><div id="OD1L">Basic OD</div><div id="OD1P">200000</div></div>
+          <div id="OD2"><div id="OD2L">Discount</div><div id="OD2P">200000</div></div>
+          <div id="OD3"><div id="OD3L">IMT 23-Lamp,Tyres,Tubes, Paint,etc.</div><div id="OD3P">200000</div></div>
+          <div id="OD4"><div id="OD4L">Nil Depreciation</div><div id="OD4P">200000</div></div>
+          <div id="OD5"><div id="OD5L">Engine Protect</div><div id="OD5P">200000</div></div>
+          <div id="OD6"><div id="OD6L">Consumables</div><div id="OD6P">200000</div></div>
+          <div id="OD7"><div id="OD7L">Return To Invoice</div><div id="OD7P">200000</div></div>
+          <div id="OD8"><div id="OD8L">Loss Of Key</div><div id="OD8P">200000</div></div>
+          <div id="OD9"><div id="OD9L">Emi Protect</div><div id="OD9P">200000</div></div>
+          <div id="OD10"><div id="OD10L">Road Side Assist</div><div id="OD10P">200000</div></div>
+          <div id="OD11"><div id="OD11L">Tyre & Rim Protect</div><div id="OD11P">200000</div></div>
+          <div id="OD12"><div id="OD12L">NCB Protect</div><div id="OD12P">200000</div></div>
+          <div id="OD13"><div id="OD13L">Geographical Ext. OD</div><div id="OD13P">200000</div></div>
+          <div id="OD14"><div id="OD14L">LPG/CNG Kit Loading</div><div id="OD14P">200000</div></div>
+          <div id="OD15"><div id="OD15L">Overturning</div><div id="OD15P">200000</div></div>
+          <div id="OD16"><div id="OD16L">Additional Towing</div><div id="OD16P">200000</div></div>
+          <div id="OD17"><div id="OD17L">No Claim Bonus</div><div id="OD17P">200000</div></div>
+          <div id="OD18"><div id="OD18L">Electric Vehicle Protect</div><div id="OD18P">200000</div></div>
+        </div>
+        <div class="Liability">
+          <h3>Liability</h3>
+          <div id="Liability1"><div id="Liability1L">Basic Liability</div><div id="Liability1P">200000</div></div>
+          <div id="Liability2"><div id="Liability2L">Legal Liability To Passengers</div><div id="Liability2P">200000</div></div>
+          <div id="Liability3"><div id="Liability3L">Legal Liability To Paid Driver Cleaner Conductor</div><div id="Liability3P">200000</div></div>
+          <div id="Liability4"><div id="Liability4L">Personal Accident To Owner-Driver</div><div id="Liability4P">200000</div></div>
+          <div id="Liability5"><div id="Liability5L">Personal Accident To Paid Driver Cleaner Conductor</div><div id="Liability5P">200000</div></div>
+          <div id="Liability6"><div id="Liability6L">Personal Accident To Unnamed Passengers</div><div id="Liability6P">200000</div></div>
+          <div id="Liability7"><div id="Liability7L">Geographical Ext. TP</div><div id="Liability7P">200000</div></div>
+	        <div id="Liability8"><div id="Liability8L">LPG/CNG Kit TP</div><div id="Liability8P">200000</div></div>
+        </div>
+      </div>
+      <div class="amountDetails">
+        <div class="amountDetailsrow1">
+          <div id="aOD"><div style="width: 260px;margin-right: 0px;margin-top: 2px;font-family: 'Roboto' Arial;font-weight: 900;font-style: italic;user-select: none;margin-left:3px;text-wrap: wrap;text-align: left;">Total Own Damage</div><div id="tod" style="width:70px;margin-left: 0px;margin-top:2px;font-family: 'Roboto' Arial;font-weight: 500;font-style: italic;user-select: none;text-align: right;">0</div></div>
+          <div id="gOD"><div style="width: 260px;margin-right: 0px;margin-top: 2px;font-family: 'Roboto' Arial;font-weight: 900;font-style: italic;user-select: none;margin-left:3px;text-wrap: wrap;text-align: left;">GST Own Damage</div><div></div><div id="god" style="width:70px;margin-left: 0px;margin-top:2px;font-family: 'Roboto' Arial;font-weight: 500;font-style: italic;user-select: none;text-align: right;">0</div></div>
+        </div>
+        <div class="amountDetailsrow2">
+          <div id="aTP"><div style="width: 280px;margin-right: 0px;margin-top: 2px;font-family: 'Roboto' Arial;font-weight: 900;font-style: italic;user-select: none;margin-left:3px;text-wrap: wrap;text-align: left;">Total Liability</div><div id="ttp" style="width:50px;margin-left: 0px;margin-top:2px;font-family: 'Roboto' Arial;font-weight: 500;font-style: italic;user-select: none;text-align: right;">0</div></div>
+          <div id="gTP"><div style="width: 280px;margin-right: 0px;margin-top: 2px;font-family: 'Roboto' Arial;font-weight: 900;font-style: italic;user-select: none;margin-left:3px;text-wrap: wrap;text-align: left;">GST Liability</div><div></div><div id="gttp" style="width:50px;margin-left: 0px;margin-top:2px;font-family: 'Roboto' Arial;font-weight: 500;font-style: italic;user-select: none;text-align: right;">0</div></div>
+        </div>
+      </div>
+      <div class="payable">
+        Total Amount Payable &#8377;&nbsp; <span id="rupees"></span>&#47;&ndash;
+      </div>
+      <div id="message">
+        <textarea id="messagetext" rows="3" cols="1" placeholder="contact person , bank account details or any other message"></textarea>
+      </div>
+        
+      
+    </div>
+    <div class="btnContainer">
+      <button onclick="totalAmount()" id="viewPremiumBtn">View Premium</button>
+      <button onclick="saveAsImage()" id="saveAsImageBtn">Save Quote</button>
+    </div>
+    <div style="text-align: center; color: grey; padding-top: 5px; font-style: italic; font-size: smaller;">
+      For Suggestions & Feedback please send a mail to nikhil1989k@gmail.com
+    </div>
+    <script src="Motor.js"></script>
+   
+    
+  </body>
+</html>
