@@ -2016,43 +2016,43 @@ function engineProtect(){
     age=(days+1)/365.25;
   }
   if(vtype.value=="PvtCar" || vtype.value=="PvtCarS"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0013).toFixed(2);
     }
-    else if(age>=1 && age <2){
+    else if(age>=0.5 && age <1.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0016).toFixed(2);
     }
-    else if(age>=2 && age <3){
+    else if(age>=1.5 && age <2.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0021).toFixed(2);
-    }else if(age>=3 && age <4){
+    }else if(age>=2.5 && age <3.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0027).toFixed(2);
-    }else if(age>=4 && age <5){
+    }else if(age>=3.5 && age <4.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0032).toFixed(2);
     }
   }
   else if(vtype.value=="2W" || vtype.value=="2WSS"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0007).toFixed(2);
     }
-    else if(age>=1 && age <2){
+    else if(age>=0.5 && age <1.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0009).toFixed(2);
     }
-    else if(age>=2 && age <3){
+    else if(age>=1.5 && age <2.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0012).toFixed(2);
-    }else if(age>=3 && age <4){
+    }else if(age>=2.5 && age <3.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0017).toFixed(2);
-    }else if(age>=4 && age <5){
+    }else if(age>=3.5 && age <4.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0022).toFixed(2);
     }
   }
   else if(vtype.value=="PCV Taxi" || vtype.value=="PCV School Bus" || vtype.value=="PCV School Bus"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0015).toFixed(2);
     }
-    else if(age>=1 && age<2){
+    else if(age>=0.5 && age<1.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0020).toFixed(2);
     }
-    else if(age>=2 && age <3){
+    else if(age>=1.5 && age <2.5){
       document.getElementById("OD5P").textContent=(Number(document.getElementById("newidv").textContent)*0.0026).toFixed(2);
     }
   }
@@ -2072,36 +2072,36 @@ function consumables(){
     age=(days+1)/365.25;
   }
   if(vtype.value=="PvtCar" || vtype.value=="PvtCarS"||vtype.value=="2W" || vtype.value=="2WSS"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0010).toFixed(2);
     }
-    else if(age>=1 && age<2){
+    else if(age>=0.5 && age<1.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0012).toFixed(2);
     }
-    else if(age >=2 && age<3){
+    else if(age >=1.5 && age<2.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0015).toFixed(2);
     }
-    else if(age>=3 && age<4){
+    else if(age>=2.5 && age<3.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0017).toFixed(2);
     }
-    else if(age>=4 && age<5){
+    else if(age>=3.5 && age<4.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0020).toFixed(2);
     }
   }
   else{
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0015).toFixed(2);
     }
-    else if(age>=1 && age<2){
+    else if(age>=0.5 && age<1.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0018).toFixed(2);
     }
-    else if(age >=2 && age<3){
+    else if(age >=1.5 && age<2.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0022).toFixed(2);
     }
-    else if(age>=3 && age<4){
+    else if(age>=2.5 && age<3.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0025).toFixed(2);
     }
-    else if(age>=4 && age<5){
+    else if(age>=3.5 && age<4.5){
       document.getElementById("OD6P").textContent=(Number(document.getElementById("newidv").textContent)*0.0030).toFixed(2);
     }
   }
@@ -2121,35 +2121,35 @@ function returnToInvoice(){
     age=(days+1)/365.25;
   }
   if(vtype.value=="PvtCar" || vtype.value=="PvtCarS"||vtype.value=="2W" || vtype.value=="2WSS"||vtype.value=="GCV4" || vtype.value=="PCV Taxi"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0015).toFixed(2);
     }
-    else if(age>=1 && age<2){
+    else if(age>=0.5 && age<1.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0020).toFixed(2);
     }
-    else if(age>2 && age <3){
+    else if(age>=1.5 && age <2.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0025).toFixed(2);
     }
   }
   else if(vtype.value=="MISC"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0010).toFixed(2);
     }
-    else if(age>=1 && age<2){
+    else if(age>=0.5 && age<1.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0015).toFixed(2);
     }
-    else if(age>2 && age <3){
+    else if(age>=1.5 && age <2.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0020).toFixed(2);
     }
   }
   else if(vtype.value=="PCV Bus" || vtype.value=="PCV School Bus"){
-    if(age<1){
+    if(age<0.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0020).toFixed(2);
     }
-    else if(age>=1 && age<2){
+    else if(age>=0.5 && age<1.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0025).toFixed(2);
     }
-    else if(age>2 && age <3){
+    else if(age>=1.5 && age <2.5){
       document.getElementById("OD7P").textContent=(Number(document.getElementById("newidv").textContent)*0.0030).toFixed(2);
     }
   }
@@ -2248,16 +2248,16 @@ function evProtect(){
     age=(days+1)/365.25;
   }
   if(eTypeSelect.selectedIndex==1){
-    if(age<1){
+    if(age<0.5){
       OD18P.textContent=(Number(newidv.textContent)*0.0025).toFixed(2);
     }
-    else if(age>=1 && age <2){
+    else if(age>=0.5 && age <1.5){
       OD18P.textContent=(Number(newidv.textContent)*0.0030).toFixed(2);
     }
-    else if(age>=2 && age <3){
+    else if(age>=1.5 && age <2.5){
       OD18P.textContent=(Number(newidv.textContent)*0.0035).toFixed(2);
     }
-    else if(age>=3 && age <4){
+    else if(age>=2.5 && age <3.5){
       OD18P.textContent=(Number(newidv.textContent)*0.004).toFixed(2);
     }
     else{
@@ -2265,16 +2265,16 @@ function evProtect(){
     }
     
   }else if(eTypeSelect.selectedIndex==2){
-    if(age<1){
+    if(age<0.5){
       OD18P.textContent=(Number(newidv.textContent)*0.0015).toFixed(2);
     }
-    else if(age>=1 && age <2){
+    else if(age>=0.5 && age <1.5){
       OD18P.textContent=(Number(newidv.textContent)*0.0020).toFixed(2);
     }
-    else if(age>=2 && age <3){
+    else if(age>=1.5 && age <2.5){
       OD18P.textContent=(Number(newidv.textContent)*0.0025).toFixed(2);
     }
-    else if(age>=3 && age <4){
+    else if(age>=2.5 && age <3.5){
       OD18P.textContent=(Number(newidv.textContent)*0.003).toFixed(2);
     }
     else{
