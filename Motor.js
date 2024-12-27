@@ -664,7 +664,7 @@ eTypeSelect.addEventListener("input" ,function(){
   checkAddonApplicable();
 });
 nps.addEventListener("input",function(){
-  cc.value=null;
+  //cc.value=null;
   gvw.value=null;
   //nps.value=null;
   rate.textContent='';
