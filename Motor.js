@@ -1766,7 +1766,7 @@ function checkAddonApplicable(){
     
     if(vtype.value=='GCV4'){
       console.log(days);
-      if(age>3&&age<=4.5){
+      if(age>=2.5&&age<=4.5){
         ND.disabled=false;
         CM.disabled=false;
         EMP.disabled=false;
@@ -1790,7 +1790,7 @@ function checkAddonApplicable(){
       console.log(age);
       console.log(typeof age);
       console.log("inside privte car");
-      if((age>4.6 && age<5) || (age>=3 && age <=4.6)){
+      if(age>=2.5 && age< 4.5){
         ND.disabled=false;
         RSA.disabled=false;
         NP.disabled=false;
@@ -1804,12 +1804,12 @@ function checkAddonApplicable(){
         }
         
       }
-      else if(age>=5 && age<=6.5){
+      else if(age>=4.5 && age<=6.5){
         ND.disabled=false;
         RSA.disabled=false;
         NP.disabled=false;
       }
-      else if(age <3){
+      else if(age <2.5){
         console.log("Age Is Less Than 3");
         ND.disabled=false;
         RSA.disabled=false;
@@ -1829,7 +1829,7 @@ function checkAddonApplicable(){
         NP.disabled=false;
       }
     }else if(vtype.value=="PCV Taxi"){
-      if(age>=3&&age<=4.5){
+      if(age>=2.5&&age<=4.5){
         ND.disabled=false;
         CM.disabled=false;
         //EMP.disabled=false;
@@ -1855,7 +1855,7 @@ function checkAddonApplicable(){
         NP.disabled=false;
       }
     }else if(vtype.value=="2W" || vtype.value=="2WSS"){
-      if((age>4.6 && age<5) || (age>=3 && age <=4.6)){
+      if(age>=2.5 && age<4.5){
         ND.disabled=false;
         RSA.disabled=false;
         //NP.disabled=false;
@@ -1865,12 +1865,12 @@ function checkAddonApplicable(){
         
         //tyreV.disabled=false;
       }
-      else if(age>=5 && age<=6.5){
+      else if(age>=4.5 && age<=6.5){
         ND.disabled=false;
         RSA.disabled=false;
         //NP.disabled=false;
       }
-      else if(age <3){
+      else if(age <2.5){
         ND.disabled=false;
         RSA.disabled=false;
         //NP.disabled=false;
@@ -1891,22 +1891,22 @@ function checkAddonApplicable(){
       EMP.disabled=false;
       console.log(nps.value);
       if(nps.value){
-        if(nps.value<=17 && age<2.6){
+        if(nps.value<=17 && age<2.5){
           ND.disabled=false;
           CM.disabled=false;
           RTI.disabled=false;
           EP.disabled=false;
           LK.disabled=false;
-        }else if(nps.value>17 && age<3){
+        }else if(nps.value>17 && age<2.5){
           ND.disabled=false;
           CM.disabled=false;
           RTI.disabled=false;
           //EP.disabled=false;
-        }else if(nps.value>17 && age <=4.5 && age>=3){
+        }else if(nps.value>17 && age <=4.5 && age>=2.5){
           ND.disabled=false;
           //EP.disabled=false;
           CM.disabled=false;
-        }else if(nps.value<=17 && age>=2.6 && age<=4.5){
+        }else if(nps.value<=17 && age>=2.5 && age<=4.5){
           ND.disabled=false;
           CM.disabled=false;
           //RTI.disabled=false;
