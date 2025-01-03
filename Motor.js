@@ -35,6 +35,7 @@ const nopd=document.getElementById("nopd");
 const csinopd=document.getElementById('csinopd');
 const nopp=document.getElementById("nopp");
 const csinopp=document.getElementById('csinopp');
+const ELA=document.getElementById("ELA");
 const formatDate = (date) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
@@ -66,6 +67,7 @@ const OD15P=document.getElementById("OD15P");
 const OD16P=document.getElementById("OD16P");
 const OD17P=document.getElementById("OD17P");
 const OD18P=document.getElementById("OD18P");
+const OD19P=document.getElementById("OD19P");
 const Liability1P=document.getElementById("Liability1P");
 const Liability2P=document.getElementById("Liability2P");
 const Liability3P=document.getElementById("Liability3P");
@@ -589,6 +591,7 @@ rdate.addEventListener("change",function(){
   csinopp.selectedIndex='0';
   eTypeSelect.selectedIndex='0';
   eTypeSelect.disabled=true;
+  ELA.value=null;
   //document.getElementById('rupees').textContent
   if(!isNaN(checkDate.getTime())){
   resetAddon();
@@ -649,6 +652,7 @@ vtype.addEventListener("input",function(){
   csinopp.selectedIndex='0';
   eTypeSelect.selectedIndex='0';
   eTypeSelect.disabled=true;
+  ELA.value=null;
  // document.getElementById('rupees').textContent
   
   console.log("back to vtype event");
@@ -666,6 +670,7 @@ eTypeSelect.addEventListener("input" ,function(){
 nps.addEventListener("input",function(){
   //cc.value=null;
   gvw.value=null;
+  
   //nps.value=null;
   rate.textContent='';
   document.getElementById('rupees').textContent
@@ -782,6 +787,7 @@ rsdate.addEventListener("change",function(){
   csinopp.selectedIndex='0';
   eTypeSelect.selectedIndex='0';
   eTypeSelect.disabled=true;
+  ELA.value=null;
   //document.getElementById('rupees').textContent
   
   console.log("Inside rsdate event");
@@ -1562,8 +1568,12 @@ function totalAmount(){
     if(odd.value!=null){
       OD2P.textContent=((Number(OD1P.textContent)*odd.value)/(-100)).toFixed(2);
     }
+    if(ELA.value){
+      document.getElementById("OD19").style.display='flex';
+      OD19P.textContent=((ELA.value*0.04)*(1-Number(odd.value)/100)).toFixed(2);
+    }
     if(imt23.checked){
-      OD3P.textContent=((Number(OD1P.textContent)+Number(OD2P.textContent))*0.15).toFixed(2);
+      OD3P.textContent=((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD19P.textContent))*0.15).toFixed(2);
       document.getElementById('OD3').style.display='flex';
     }
     if(paodch.checked){
@@ -1693,13 +1703,13 @@ function totalAmount(){
     }if(ncbd.selectedIndex!='0'){
       document.getElementById('OD17').style.display='flex';
       if(!ND.checked && !LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD15P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }else if(ND.checked && !LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD15P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }else if(!ND.checked && LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }else if(ND.checked && LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }
     }
     if(EVP.checked){
@@ -1708,12 +1718,13 @@ function totalAmount(){
         document.getElementById("OD18").style.display='flex';
       }
     }
+    
     if(vtype.value=='GCV4'){
       tod.textContent=
       (Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD5P.textContent)
       +Number(OD6P.textContent)+Number(OD7P.textContent)+Number(OD8P.textContent)+Number(OD9P.textContent)+Number(OD10P.textContent)
       +Number(OD11P.textContent)+Number(OD12P.textContent)+Number(OD13P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)
-      +Number(OD16P.textContent)+Number(OD17P.textContent)+Number(OD18P.textContent)
+      +Number(OD16P.textContent)+Number(OD17P.textContent)+Number(OD18P.textContent)+Number(OD19P.textContent)
       ).toFixed(0);
       god.textContent=(Number(tod.textContent)*0.18).toFixed(2);
       ttp.textContent=
@@ -1730,7 +1741,7 @@ function totalAmount(){
       (Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD5P.textContent)
       +Number(OD6P.textContent)+Number(OD7P.textContent)+Number(OD8P.textContent)+Number(OD9P.textContent)+Number(OD10P.textContent)
       +Number(OD11P.textContent)+Number(OD12P.textContent)+Number(OD13P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)
-      +Number(OD16P.textContent)+Number(OD17P.textContent)+Number(OD18P.textContent)
+      +Number(OD16P.textContent)+Number(OD17P.textContent)+Number(OD18P.textContent)+Number(OD19P.textContent)
       ).toFixed(0);
       god.textContent=(Number(tod.textContent)*0.18).toFixed(2);
       ttp.textContent=
@@ -1976,27 +1987,27 @@ function nilDep(){
   }
   if(vtype.value=="GCV4" || vtype.value=="MISC"||vtype.value=="PCV Taxi" || vtype.value=="PCV Bus"|| vtype.value=="PCV School Bus"){
     if(age<=0.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.10).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.10).toFixed(2);
     }
     else if(age>0.5 && age<=1.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.20).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.20).toFixed(2);
     }
     else if(age>1.5 && age<=2.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.30).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.30).toFixed(2);
     }else if(age >2.5 && age <=4.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.40).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.40).toFixed(2);
     }
 
   }else if(vtype.value=="PvtCar" || vtype.value=="PvtCarS" || vtype.value=="2W"|| vtype.value=="2WSS"){
     console.log("pvt add on");
     if(age<=0.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.10).toFixed(2); 
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.10).toFixed(2); 
     }else if(age>0.5 && age<=1.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.20).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.20).toFixed(2);
     }else if(age>1.5 && age<=4.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.30).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.30).toFixed(2);
     }else if(age>4.5 && age <=6.5){
-      document.getElementById("OD4P").textContent=(Number(document.getElementById("OD1P").textContent)*0.40).toFixed(2);
+      document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.40).toFixed(2);
     }
 
   }
@@ -2172,6 +2183,7 @@ document.getElementById("OD15").style.display='none';
 document.getElementById("OD16").style.display='none';
 document.getElementById("OD17").style.display='none';
 document.getElementById("OD18").style.display='none';
+document.getElementById("OD19").style.display='none';
 document.getElementById("Liability1").style.display='none';
 document.getElementById("Liability2").style.display='none';
 document.getElementById("Liability3").style.display='none';
@@ -2198,6 +2210,7 @@ document.getElementById("OD15P").textContent='0';
 document.getElementById("OD16P").textContent='0';
 document.getElementById("OD17P").textContent='0';
 document.getElementById("OD18P").textContent='0';
+document.getElementById("OD19P").textContent='0';
 document.getElementById("Liability1P").textContent='0';
 document.getElementById("Liability2P").textContent='0';
 document.getElementById("Liability3P").textContent='0';
