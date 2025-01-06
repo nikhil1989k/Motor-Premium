@@ -68,6 +68,7 @@ const OD16P=document.getElementById("OD16P");
 const OD17P=document.getElementById("OD17P");
 const OD18P=document.getElementById("OD18P");
 const OD19P=document.getElementById("OD19P");
+const OD20P=document.getElementById("OD20P");
 const Liability1P=document.getElementById("Liability1P");
 const Liability2P=document.getElementById("Liability2P");
 const Liability3P=document.getElementById("Liability3P");
@@ -76,12 +77,14 @@ const Liability5P=document.getElementById("Liability5P");
 const Liability6P=document.getElementById("Liability6P");
 const Liability7P=document.getElementById("Liability7P");
 const Liability8P=document.getElementById("Liability8P");
+const Liability9P=document.getElementById("Liability9P");
 const tod=document.getElementById('tod');
 const god=document.getElementById('god');
 const ttp=document.getElementById('ttp');
 const gttp=document.getElementById('gttp');
 const eTypeSelect=document.getElementById('eTypeSelect');
 const EVP=document.getElementById("EVP");
+const TrOD=document.getElementById('TrOD');
 (function(){
   resetPremiumAmount();
 })();
@@ -1197,6 +1200,10 @@ function basicTP(){
       document.getElementById("Liability8P").textContent=60;
       document.getElementById('Liability8').style.display='flex';
     }
+    if(TrOD.value){
+      document.getElementById('Liability9').style.display='flex';
+      document.getElementById("Liability9P").textContent=2485;
+    }
     if(GE.checked){
       document.getElementById("Liability7P").textContent=100;
       document.getElementById('Liability7').style.display='flex';
@@ -1588,8 +1595,12 @@ function totalAmount(){
       document.getElementById("OD19").style.display='flex';
       OD19P.textContent=((ELA.value*0.04)*(1-Number(odd.value)/100)).toFixed(2);
     }
+    if(TrOD.value){
+      document.getElementById("OD20").style.display='flex';
+      OD20P.textContent=((TrOD.value*0.0105)*(1-Number(odd.value)/100)).toFixed(2);
+    }
     if(imt23.checked){
-      OD3P.textContent=((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD19P.textContent))*0.15).toFixed(2);
+      OD3P.textContent=((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD19P.textContent)+Number(OD20P.textContent))*0.15).toFixed(2);
       document.getElementById('OD3').style.display='flex';
     }
     if(paodch.checked){
@@ -1728,13 +1739,13 @@ function totalAmount(){
     }if(ncbd.selectedIndex!='0'){
       document.getElementById('OD17').style.display='flex';
       if(!ND.checked && !LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent)+Number(OD20P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }else if(ND.checked && !LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent)+Number(OD20P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }else if(!ND.checked && LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent)+Number(OD20P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }else if(ND.checked && LPG.checked){
-        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
+        OD17P.textContent=(((Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)+Number(OD19P.textContent)+Number(OD20P.textContent))*Number(ncbd.value))/100).toFixed(2)*-1;
       }
     }
     if(EVP.checked){
@@ -1749,15 +1760,15 @@ function totalAmount(){
       (Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD5P.textContent)
       +Number(OD6P.textContent)+Number(OD7P.textContent)+Number(OD8P.textContent)+Number(OD9P.textContent)+Number(OD10P.textContent)
       +Number(OD11P.textContent)+Number(OD12P.textContent)+Number(OD13P.textContent)+Number(OD14P.textContent)+Number(OD15P.textContent)
-      +Number(OD16P.textContent)+Number(OD17P.textContent)+Number(OD18P.textContent)+Number(OD19P.textContent)
+      +Number(OD16P.textContent)+Number(OD17P.textContent)+Number(OD18P.textContent)+Number(OD19P.textContent)+Number(OD20P.textContent)
       ).toFixed(0);
       god.textContent=(Number(tod.textContent)*0.18).toFixed(2);
       ttp.textContent=
       (Number(Liability1P.textContent)+Number(Liability2P.textContent)+Number(Liability3P.textContent)+Number(Liability4P.textContent)+
-      Number(Liability5P.textContent)+Number(Liability6P.textContent)+Number(Liability7P.textContent)+Number(Liability8P.textContent)).toFixed(0);
+      Number(Liability5P.textContent)+Number(Liability6P.textContent)+Number(Liability7P.textContent)+Number(Liability8P.textContent)+Number(Liability9P.textContent)).toFixed(0);
       gttp.textContent=
       ((Number(Liability1P.textContent)*0.12)+(Number(Liability2P.textContent)+Number(Liability3P.textContent)+Number(Liability4P.textContent)+
-      Number(Liability5P.textContent)+Number(Liability6P.textContent)+Number(Liability7P.textContent)+Number(Liability8P.textContent))*0.18).toFixed(2);
+      Number(Liability5P.textContent)+Number(Liability6P.textContent)+Number(Liability7P.textContent)+Number(Liability8P.textContent)+Number(Liability9P.textContent))*0.18).toFixed(2);
       document.getElementById('rupees').textContent=Math.ceil(Number(tod.textContent)+Number(god.textContent)+Number(ttp.textContent)+Number(gttp.textContent)+1);
       //document.getElementById('rupees').style.fontSize='18px';
     }
@@ -1808,11 +1819,13 @@ function checkAddonApplicable(){
         EMP.disabled=false;
         RSA.disabled=false;
         towingAmt.disabled=false;
+        TrOD.disabled=false;
       }
       else if(age>4.5){
         towingAmt.disabled=false;
         EMP.disabled=false;
         RSA.disabled=false;
+        TrOD.disabled=false;
       }else{
         ND.disabled=false;
         CM.disabled=false;
@@ -1820,6 +1833,7 @@ function checkAddonApplicable(){
         RSA.disabled=false;
         towingAmt.disabled=false;
         RTI.disabled=false;
+        TrOD.disabled=false;
       }
     }
     else if(vtype.value=="PvtCar" || vtype.value=="PvtCarS"){
@@ -1962,6 +1976,7 @@ function checkAddonApplicable(){
 
     }else if(vtype.value=="MISC"){
       EMP.disabled=false;
+      TrOD.disabled=false;
       console.log("misc add on check");
       if(age<4.5)
       {
@@ -2002,6 +2017,8 @@ function resetAddon(){
   NP.disabled=true;
   OT.disabled=true;
   EVP.checked=false;
+  TrOD.value=null;
+  TrOD.disabled=true;
   //towingAmt.disabled=true;
 
 }
@@ -2218,6 +2235,7 @@ document.getElementById("OD16").style.display='none';
 document.getElementById("OD17").style.display='none';
 document.getElementById("OD18").style.display='none';
 document.getElementById("OD19").style.display='none';
+document.getElementById("OD20").style.display='none';
 document.getElementById("Liability1").style.display='none';
 document.getElementById("Liability2").style.display='none';
 document.getElementById("Liability3").style.display='none';
@@ -2226,6 +2244,7 @@ document.getElementById("Liability5").style.display='none';
 document.getElementById("Liability6").style.display='none';
 document.getElementById("Liability7").style.display='none';
 document.getElementById("Liability8").style.display='none';
+document.getElementById("Liability9").style.display='none';
 document.getElementById("OD1P").textContent='';
 document.getElementById("OD2P").textContent='';
 document.getElementById("OD3P").textContent='0';
@@ -2245,6 +2264,7 @@ document.getElementById("OD16P").textContent='0';
 document.getElementById("OD17P").textContent='0';
 document.getElementById("OD18P").textContent='0';
 document.getElementById("OD19P").textContent='0';
+document.getElementById("OD20P").textContent='0';
 document.getElementById("Liability1P").textContent='0';
 document.getElementById("Liability2P").textContent='0';
 document.getElementById("Liability3P").textContent='0';
@@ -2253,6 +2273,7 @@ document.getElementById("Liability5P").textContent='0';
 document.getElementById("Liability6P").textContent='0';
 document.getElementById("Liability7P").textContent='0';
 document.getElementById("Liability8P").textContent='0';
+document.getElementById("Liability9P").textContent='0';
 tod.textContent='';
 god.textContent='';
 ttp.textContent='';
