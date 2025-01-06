@@ -592,6 +592,7 @@ rdate.addEventListener("change",function(){
   eTypeSelect.selectedIndex='0';
   eTypeSelect.disabled=true;
   ELA.value=null;
+  EMP.value=null;
   //document.getElementById('rupees').textContent
   if(!isNaN(checkDate.getTime())){
   resetAddon();
@@ -788,6 +789,7 @@ rsdate.addEventListener("change",function(){
   eTypeSelect.selectedIndex='0';
   eTypeSelect.disabled=true;
   ELA.value=null;
+  EMP.value=null;
   //document.getElementById('rupees').textContent
   
   console.log("Inside rsdate event");
@@ -807,7 +809,10 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
   //console.log("Inside Basic OD");
   //console.log(grossVW);
   //console.log(vehicleType);
+
   if(r_date && rs_date){
+      const tempDate=new Date(rdate.valueAsDate);
+      const tempDate1=new Date();
       if(vehicleType=="GCV4"){
         lld.disabled=false;
         paodch.checked=false;
@@ -895,7 +900,12 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         paodch.checked=false;
         paodch.disabled=false;
         paodt.selectedIndex='0';
-        paodt.disabled=false;
+        if(tempDate1.setHours(0,0,0,0)==tempDate.setHours(0,0,0,0)){
+          paodt.disabled=false;
+          paodt.options[2].disabled=true;
+          paodt.options[1].disabled=false;
+        }
+        
         imt23.checked=false;
         imt23.disabled=true;
         gvw.style.backgroundColor='white';
@@ -928,8 +938,14 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         lld.disabled=false;
         paodch.checked=false;
         paodch.disabled=false;
-        paodt.disabled=false;
+        
         paodt.selectedIndex='0';
+        if(tempDate1.setHours(0,0,0,0)==tempDate.setHours(0,0,0,0)){
+          paodt.disabled=false;
+          paodt.options[2].disabled=false;
+          paodt.options[1].disabled=true;
+        }
+        
         imt23.checked=false;
         imt23.disabled=true;
         gvw.style.backgroundColor='white';
@@ -1584,8 +1600,10 @@ function totalAmount(){
         Liability4P.textContent=705;
         document.getElementById("Liability4").style.display='flex';
       }else{
+        
         Liability4P.textContent=1100;
         document.getElementById("Liability4").style.display='flex';
+        
       }  
     }
     if(nps.value!=null && nps.value!='' && nps.value!='0'){
@@ -1640,9 +1658,16 @@ function totalAmount(){
         document.getElementById('OD8').style.display='flex';
       }
     }
-    if(EMP.checked){
-      OD9P.textContent=1500;
+    if(EMP.value){
+      //OD9P.textContent=1500;
       document.getElementById('OD9').style.display='flex';
+      if(vtype.value=='2W' || vtype.value=='2WSS'){
+        OD9P.textContent=(Number(EMP.value)*0.02).toFixed(2);
+      }else if(vtype.value=="PCV Taxi" || vtype.value=='PvtCar'||vtype.value=='PvtCarS'){
+        OD9P.textContent=(Number(EMP.value)*0.066).toFixed(2);
+      }else{
+        OD9P.textContent=(Number(EMP.value)*0.03).toFixed(2);
+      }
     }
     if(RSA.checked){
       if(vtype.value=='2W' || vtype.value=='2WSS'){
@@ -1838,6 +1863,7 @@ function checkAddonApplicable(){
       else{
         RSA.disabled=false;
         NP.disabled=false;
+        EMP.disabled=false;
       }
     }else if(vtype.value=="PCV Taxi"){
       if(age>=2.5&&age<=4.5){
@@ -1848,12 +1874,14 @@ function checkAddonApplicable(){
         //towingAmt.disabled=false;
         LK.disabled=false;
         NP.disabled=false;
+        EMP.disabled=false;
       }
       else if(age>4.5){
         //towingAmt.disabled=false;
         //EMP.disabled=false;
         RSA.disabled=false;
         NP.disabled=false;
+        EMP.disabled=false;
       }else{
         ND.disabled=false;
         CM.disabled=false;
@@ -1864,6 +1892,7 @@ function checkAddonApplicable(){
         RTI.disabled=false;
         LK.disabled=false;
         NP.disabled=false;
+        EMP.disabled=false;
       }
     }else if(vtype.value=="2W" || vtype.value=="2WSS"){
       if(age>=2.5 && age<4.5){
@@ -1873,6 +1902,7 @@ function checkAddonApplicable(){
         CM.disabled=false;
         LK.disabled=false;
         EP.disabled=false;
+        EMP.disabled=false;
         
         //tyreV.disabled=false;
       }
@@ -1880,6 +1910,7 @@ function checkAddonApplicable(){
         ND.disabled=false;
         RSA.disabled=false;
         //NP.disabled=false;
+        EMP.disabled=false;
       }
       else if(age <2.5){
         ND.disabled=false;
@@ -1890,11 +1921,13 @@ function checkAddonApplicable(){
         EP.disabled=false;
         tyreV.disabled=false;
         RTI.disabled=false;
+        EMP.disabled=false;
         
       }
       else{
         RSA.disabled=false;
         //NP.disabled=false;
+        EMP.disabled=false;
       }
 
     }else if(vtype.value=="PCV Bus" || vtype.value=="PCV School Bus"){
@@ -1928,6 +1961,7 @@ function checkAddonApplicable(){
       
 
     }else if(vtype.value=="MISC"){
+      EMP.disabled=false;
       console.log("misc add on check");
       if(age<4.5)
       {
@@ -1949,7 +1983,7 @@ function resetAddon(){
   CM.checked=false;
   RTI.checked=false;
   LK.checked=false;
-  EMP.checked=false;
+  EMP.value=null;
   RSA.checked=false;
   GE.checked=false;
   //tyreV.checked=false;
@@ -1961,7 +1995,7 @@ function resetAddon(){
   CM.disabled=true;
   RTI.disabled=true;
   LK.disabled=true;
-  EMP.disabled=true;
+  EMP.disabled=false;
   RSA.disabled=true;
   tyreV.disabled=true;
   towingAmt.disabled=true;
