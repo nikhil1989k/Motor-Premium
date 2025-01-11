@@ -1290,7 +1290,7 @@ function basicTP(){
     }
     if(TrOD.value){
       document.getElementById('Liability9').style.display='flex';
-      document.getElementById("Liability9P").textContent=2485;
+      document.getElementById('Liability9P').textContent=2485;
     }
     if(GE.checked){
       document.getElementById("Liability7P").textContent=100;
