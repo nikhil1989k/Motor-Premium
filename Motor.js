@@ -1288,6 +1288,10 @@ function basicTP(){
       document.getElementById("Liability8P").textContent=60;
       document.getElementById('Liability8').style.display='flex';
     }
+    if(TrOD.value){
+      document.getElementById('Liability9').style.display='flex';
+      document.getElementById("Liability9P").textContent=2485;
+    }
     if(GE.checked){
       document.getElementById("Liability7P").textContent=100;
       document.getElementById('Liability7').style.display='flex';
@@ -1782,7 +1786,7 @@ function totalAmount(){
       god.textContent=(Number(tod.textContent)*0.18).toFixed(2);
       ttp.textContent=
       (Number(Liability1P.textContent)+Number(Liability2P.textContent)+Number(Liability3P.textContent)+Number(Liability4P.textContent)+
-      Number(Liability5P.textContent)+Number(Liability6P.textContent)+Number(Liability7P.textContent)+Number(Liability8P.textContent)).toFixed(0);
+      Number(Liability5P.textContent)+Number(Liability6P.textContent)+Number(Liability7P.textContent)+Number(Liability8P.textContent)+Number(Liability9P.textContent)).toFixed(0);
       gttp.textContent=(Number(ttp.textContent)*0.18).toFixed(2);
       document.getElementById('rupees').textContent=Math.ceil(Number(tod.textContent)+Number(god.textContent)+Number(ttp.textContent)+Number(gttp.textContent)+1);
       //document.getElementById('rupees').style.fontSize='18px';
