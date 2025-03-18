@@ -1951,6 +1951,7 @@ function checkAddonApplicable(){
     }else if(vtype.value=="PCV Bus" || vtype.value=="PCV School Bus"){
       RSA.disabled=false;
       EMP.disabled=false;
+      towingAmt.disabled=false;
       console.log(nps.value);
       if(nps.value){
         if(nps.value<=17 && age<2.5){
