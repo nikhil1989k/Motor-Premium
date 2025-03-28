@@ -570,7 +570,51 @@ function miscODRate(){
 
 }
 }
-
+function threegcvODRate(){
+  console.log('insdie 3gcv');
+  const jrsdate=new Date(rsdate.valueAsDate);
+  const jrdate=new Date(rdate.valueAsDate);
+  console.log(jrdate);
+  console.log(jrsdate);
+  const days=(jrsdate.getTime()-jrdate.getTime())/1000/60/60/24;
+  var age;
+  if(days<1460){
+    age=days/365;
+  }
+  else{
+    age=(days+1)/365.25;
+  }
+  console.log(age);
+  switch(zone.value){
+    case 'zoneb':
+      if(age<5){
+        rate.textContent=1.656;
+      }else if(age>=5&&age<7){
+        rate.textContent=1.697;
+      }else{
+        rate.textContent=1.739;
+      }
+      break;
+      case 'zonec':
+      if(age<5){
+        rate.textContent=1.640;
+      }else if(age>=5&&age<7){
+        rate.textContent=1.681;
+      }else{
+        rate.textContent=1.722;
+      }
+      break;
+      case 'zonea':
+      if(age<5){
+        rate.textContent=1.664;
+      }else if(age>=5&&age<7){
+        rate.textContent=1.706;
+      }else{
+        rate.textContent=1.747;
+      }
+      break;
+}
+}
 
 rdate.addEventListener("change",function(){
   //console.log(rsdate.value);
@@ -857,6 +901,39 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
           //window.alert("Please Enter Gross Vehicle Weight");
           
         }
+      }
+      else if(vehicleType=='3GCV'){
+        lld.disabled=false;
+        paodch.checked=false;
+        paodch.disabled=false;
+        paodt.selectedIndex='0';
+        paodt.disabled=true;
+        imt23.disabled=false;
+        imt23.checked=false;
+        cc.value=null;
+        nps.value=null;
+        cc.disabled=true;
+        nps.disabled=true;
+        cc.style.backgroundColor='white';
+        nps.style.backgroundColor='white';
+        gvw.disabled=false;
+        nopp.value==null;
+        csinopp.selectedIndex='0';
+        nopp.disabled=true;
+        csinopp.disabled=true;
+        nopd.value=null;
+        csinopd.selectedIndex='0';
+        nopd.disabled=false;
+        csinopd.disabled=false;
+	      OT.disabled=true;
+	      OT.checked=false;
+        eTypeSelect.selectedIndex='0';
+        eTypeSelect.disabled=true; 
+        EVP.checked=false;
+        EVP.disabled=true;
+        gvw.style.backgroundColor='rgb(240, 160, 160)';     
+        threegcvODRate();
+        
       }
       else if(vehicleType=="MISC"){
         nopp.value==null;
@@ -1235,6 +1312,28 @@ function basicTP(){
 			document.getElementById("Liability1P").textContent=44242;
 		}
 	}
+  else if(vtype.value=='3GCV'){
+    if(LPG.checked){
+      document.getElementById("Liability8P").textContent=60;
+      document.getElementById('Liability8').style.display='flex';
+    }
+    if(GE.checked){
+      document.getElementById("Liability7P").textContent=100;
+      document.getElementById('Liability7').style.display='flex';
+    }
+    if(nopd.value){
+      if(csinopd.selectedIndex=='1'){
+        document.getElementById("Liability5P").textContent=nopd.value*60;
+        document.getElementById('Liability5').style.display='flex';
+      }
+      else{
+        document.getElementById("Liability5P").textContent=nopd.value*120;
+        document.getElementById('Liability5').style.display='flex';
+      }
+    }
+    document.getElementById('Liability1').style.display='flex';
+    document.getElementById("Liability1P").textContent=4492;
+  }
 	else if(vtype.value=="PCV Bus"){
     if(LPG.checked){
       document.getElementById("Liability8P").textContent=60;
@@ -1759,7 +1858,7 @@ function totalAmount(){
       }
     }
     
-    if(vtype.value=='GCV4'){
+    if(vtype.value=='GCV4' || vtype.value=='3GCV'){
       tod.textContent=
       (Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD5P.textContent)
       +Number(OD6P.textContent)+Number(OD7P.textContent)+Number(OD8P.textContent)+Number(OD9P.textContent)+Number(OD10P.textContent)
@@ -1776,7 +1875,7 @@ function totalAmount(){
       document.getElementById('rupees').textContent=Math.ceil(Number(tod.textContent)+Number(god.textContent)+Number(ttp.textContent)+Number(gttp.textContent)+1);
       //document.getElementById('rupees').style.fontSize='18px';
     }
-    if(vtype.value!='GCV4'){
+    if(vtype.value!='GCV4' && vtype.value!='3GCV'){
       tod.textContent=
       (Number(OD1P.textContent)+Number(OD2P.textContent)+Number(OD3P.textContent)+Number(OD4P.textContent)+Number(OD5P.textContent)
       +Number(OD6P.textContent)+Number(OD7P.textContent)+Number(OD8P.textContent)+Number(OD9P.textContent)+Number(OD10P.textContent)
@@ -1838,6 +1937,30 @@ function checkAddonApplicable(){
         towingAmt.disabled=false;
         RTI.disabled=false;
         TrOD.disabled=false;
+      }
+    }
+    else if(vtype.value=='3GCV'){
+      if(age>=2.5&&age<=4.5){
+        ND.disabled=false;
+        CM.disabled=false;
+        EMP.disabled=false;
+        RSA.disabled=false;
+        towingAmt.disabled=true;
+        TrOD.disabled=true;
+      }
+      else if(age>4.5){
+        towingAmt.disabled=false;
+        EMP.disabled=false;
+        RSA.disabled=false;
+        TrOD.disabled=true;
+      }else{
+        ND.disabled=false;
+        CM.disabled=false;
+        EMP.disabled=false;
+        RSA.disabled=false;
+        towingAmt.disabled=true;
+        RTI.disabled=false;
+        TrOD.disabled=true;
       }
     }
     else if(vtype.value=="PvtCar" || vtype.value=="PvtCarS"){
