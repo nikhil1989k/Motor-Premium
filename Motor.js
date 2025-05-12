@@ -1907,7 +1907,7 @@ function totalAmount(){
       }else if(vtype.value=='PvtCar' || vtype.value=='PvtCarS'){
         OD10P.textContent=50;
         document.getElementById('OD10').style.display='flex';
-      }else if(vtype.value=="PCVTaxi"){
+      }else if(vtype.value=="PCV Taxi"){
         OD10P.textContent=75;
         document.getElementById('OD10').style.display='flex';
       }else if(vtype.value=="GCV4"){
