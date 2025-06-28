@@ -895,7 +895,7 @@ oldidv.addEventListener("input",()=>{
 });
 dep.addEventListener("input",()=>{
   document.getElementById('rupees').textContent
-  newidv.textContent=(Number(oldidv.value)*(100-Number(dep.value))/100);
+  newidv.textContent=(Number(oldidv.value)*(100-Number(dep.value))/100).toFixed(0);
 });
 function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
   //console.log("Inside Basic OD");
@@ -977,6 +977,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         eTypeSelect.disabled=true; 
         EVP.checked=false;
         EVP.disabled=true;
+        eTypeSelect.disabled=false;
+        eTypeSelect.options[2].disabled=true;
         //gvw.style.backgroundColor='rgb(240, 160, 160)';     
         threegcvODRate();
         
@@ -1397,6 +1399,7 @@ function basicTP(){
 		}
 	}
   else if(vtype.value=='3GCV'){
+    if(eTypeSelect.selectedIndex=='0'){
     if(LPG.checked){
       document.getElementById("Liability8P").textContent=60;
       document.getElementById('Liability8').style.display='flex';
@@ -1417,6 +1420,29 @@ function basicTP(){
     }
     document.getElementById('Liability1').style.display='flex';
     document.getElementById("Liability1P").textContent=4492;
+  }
+  else{
+    if(LPG.checked){
+      document.getElementById("Liability8P").textContent=60;
+      document.getElementById('Liability8').style.display='flex';
+    }
+    if(GE.checked){
+      document.getElementById("Liability7P").textContent=100;
+      document.getElementById('Liability7').style.display='flex';
+    }
+    if(nopd.value){
+      if(csinopd.selectedIndex=='1'){
+        document.getElementById("Liability5P").textContent=nopd.value*60;
+        document.getElementById('Liability5').style.display='flex';
+      }
+      else{
+        document.getElementById("Liability5P").textContent=nopd.value*120;
+        document.getElementById('Liability5').style.display='flex';
+      }
+    }
+    document.getElementById('Liability1').style.display='flex';
+    document.getElementById("Liability1P").textContent=3139;
+  }
   }
   else if(vtype.value=='3PCV'){
     if(eTypeSelect.selectedIndex=='0'){
