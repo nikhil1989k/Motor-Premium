@@ -1933,7 +1933,7 @@ function totalAmount(){
       }else if(vtype.value=='PvtCar' || vtype.value=='PvtCarS'){
         OD10P.textContent=50;
         document.getElementById('OD10').style.display='flex';
-      }else if(vtype.value=="PCVTaxi"){
+      }else if(vtype.value=="PCV Taxi"){
         OD10P.textContent=75;
         document.getElementById('OD10').style.display='flex';
       }else if(vtype.value=="GCV4"){
@@ -2307,7 +2307,7 @@ function nilDep(){
   else{
     age=(days+1)/365.25;
   }
-  if(vtype.value=="GCV4" || vtype.value=="MISC"||vtype.value=="PCV Taxi" || vtype.value=="PCV Bus"|| vtype.value=="PCV School Bus"){
+  if(vtype.value=="GCV4" || vtype.value=="MISC"||vtype.value=="PCV Taxi" || vtype.value=="PCV Bus"|| vtype.value=="PCV School Bus" || vtype.value=="3GCV" || vtype.value=="3PCV"){
     if(age<=0.5){
       document.getElementById("OD4P").textContent=(Number(Number(document.getElementById("OD1P").textContent)+(ELA.value*0.04))*0.10).toFixed(2);
     }
