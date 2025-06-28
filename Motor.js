@@ -891,11 +891,11 @@ rsdate.addEventListener("change",function(){
 });
 oldidv.addEventListener("input",()=>{
   document.getElementById('rupees').textContent
-  newidv.textContent=(Number(oldidv.value)*(100-Number(dep.value))/100);
+  newidv.textContent=Number((Number(oldidv.value)*(100-Number(dep.value))/100).toFixed(0));
 });
 dep.addEventListener("input",()=>{
   document.getElementById('rupees').textContent
-  newidv.textContent=Number((Number(oldidv.value)*(100-Number(dep.value))/100).toFixed(0)).toLocaleString();
+  newidv.textContent=Number((Number(oldidv.value)*(100-Number(dep.value))/100).toFixed(0));
 });
 function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
   //console.log("Inside Basic OD");
