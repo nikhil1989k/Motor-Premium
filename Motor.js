@@ -973,8 +973,8 @@ function basicODRate(r_date,rs_date,zonetype,vehicleType,grossVW,cubicCap,nops){
         csinopd.disabled=false;
 	      OT.disabled=true;
 	      OT.checked=false;
-        eTypeSelect.selectedIndex='0';
-        eTypeSelect.disabled=true; 
+        //eTypeSelect.selectedIndex='0';
+        //eTypeSelect.disabled=true; 
         EVP.checked=false;
         EVP.disabled=true;
         eTypeSelect.disabled=false;
